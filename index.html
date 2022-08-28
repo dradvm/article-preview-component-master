@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./style.css">
+  <script src="https://kit.fontawesome.com/b42e1089e2.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Article preview component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+<body>
+  <div class="article">
+    <div class="article__container">
+      <div class="article__img"></div>
+      <div class="article__content">
+        <div class="article__title">
+          Shift the overall look and feel by adding these wonderful 
+          touches to furniture in your home
+        </div>
+        <div class="article__description">
+          Ever been in a room and felt like something was missing? Perhaps 
+          it felt slightly bare and uninviting. I’ve got some simple tips 
+          to help you make any room feel complete.
+        </div>
+        <div class="article__info">
+          <div class="article__user">
+            <img src="./images/avatar-michelle.jpg" alt="avatar" class="article__user__avt">
+            <div class="article__user__infomations">
+              <div class="article__user__infomations__name">
+                Michelle Appleton
+              </div>
+              <div class="article__user__infomations__date">
+                28 Jun 2020
+              </div>
+            </div>
+          </div>
+          <div class="article__share__btn">
+            <i class="fa-solid fa-share"></i>
+            <div class="article__socials--web">
+              Share
+              <button class="article__social__item"><img src="./images/icon-facebook.svg" alt="facebook"></button>
+              <button class="article__social__item"><img src="./images/icon-twitter.svg" alt="twitter"></button>
+              <button class="article__social__item"><img src="./images/icon-pinterest.svg" alt="pinterest"></button>
+            </div>
+          </div>
+          
+        </div>
+        <div class="article__socials--mobile">
+          <div class="article__socials__container">
+            Share
+            <button class="article__social__item"><img src="./images/icon-facebook.svg" alt="facebook"></button>
+            <button class="article__social__item"><img src="./images/icon-twitter.svg" alt="twitter"></button>
+            <button class="article__social__item"><img src="./images/icon-pinterest.svg" alt="pinterest"></button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <script>
+      const shareBtn = document.querySelector(".article__share__btn")
+      const socialsWeb = document.querySelector(".article__socials--web")
+      const socialsMobile = document.querySelector(".article__socials--mobile")
+      shareBtn.onclick = function () {
+        if (window.matchMedia("min-width:1024px").matches) {
+          socialsWeb.classList.toggle("active")
+        }
+        else {
+          socialsMobile.classList.toggle("active")
+        }
+      }
+      socialsWeb.onclick = function (event) {
+        event.stopPropagation()
+      }
+    </script>
+  </div>
+
+
+
+
+
+
+
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/dradvm">DN</a>.
+  </div>
+</body>
+</html>

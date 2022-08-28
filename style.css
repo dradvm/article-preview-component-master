@@ -1,0 +1,212 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --DesaturatedDarkBlue: hsl(214, 17%, 51%);
+    --GrayishBlue: hsl(212, 23%, 69%);
+    --LightGrayishBlue: hsl(210, 46%, 95%);
+}
+.attribution {
+    bottom: 0;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    width: 100%;font-size: 11px; 
+    text-align: center;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+button {
+    border: none;
+    padding: none;
+    background-color: transparent;
+}
+.article {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--LightGrayishBlue);
+    font-size: 13px;
+    font-family: 'Manrope', sans-serif;
+}
+.article__container {
+    background-color: white;
+    display: flex;
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 5px 5px 20px var(--GrayishBlue);
+}
+.article__img {
+    background: url("./images/drawers.jpg") left / cover no-repeat;
+    width:100%;
+    border-radius: 8px 0px 0px 8px;
+}
+.article__content {
+    padding: 32px;
+    position: relative;
+}
+.article__title {
+    color: var(--VeryDarkGrayishBlue);
+    font-weight: 600;
+    font-size: 18px;
+    width: 90%;
+    line-height: 1.2;
+}
+.article__description {
+    color: var(--DesaturatedDarkBlue);
+    padding: 14px 0px;
+    line-height: 1.5;
+}
+.article__info {
+    display: flex;
+    justify-content: space-between;
+}
+.article__user {
+    display: flex;
+}
+.article__user__avt {
+    margin-right: 5%;
+    width: 12%;
+    border-radius: 50%;
+}
+.article__user__infomations {
+    display: flex;
+    flex-direction: column;
+}
+.article__user__infomations__name {
+    color: var(--VeryDarkGrayishBlue);
+    font-weight: 600;
+}
+.article__user__infomations__date {
+    color: var(--DesaturatedDarkBlue)
+}
+.article__share__btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+.article__share__btn i{
+    width: 28px;
+    display: flex;
+    justify-content: center;
+    line-height: 28px;
+    border-radius: 50%;
+    background-color: var(--LightGrayishBlue);
+    color: var(--DesaturatedDarkBlue);
+    z-index: 1;
+}
+.article__share__btn i:hover,
+.article__share__btn i:active {
+    background-color: var(--VeryDarkGrayishBlue);
+    color: white;
+    transition: .3s;
+}
+.article__socials--web {
+    display: none;    
+    position: absolute;
+    padding: 14px 28px;
+    background-color: var(--VeryDarkGrayishBlue);
+    border-radius: 8px;
+    align-items: center;
+    justify-content: space-between;
+    width: 220px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: var(--DesaturatedDarkBlue);
+    top: -200%;
+    left: -343%;
+    box-shadow: 0px 3px 12px var(--GrayishBlue);
+}
+.article__socials--mobile {
+    display: none;    
+    position: absolute;
+    padding: 0 32px;
+    background-color: var(--VeryDarkGrayishBlue);
+    box-shadow: 0px 3px 12px var(--GrayishBlue);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 68px;
+}
+.article__socials__container {
+    color: var(--DesaturatedDarkBlue);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    width: 180px;
+}
+.article__socials--web::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 10px solid var(--VeryDarkGrayishBlue);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 48px;
+}
+.article__social__item {
+    display: flex;
+    align-items: center;
+}
+
+.active {
+    display: flex;
+}
+
+@media (max-width: 1023px) {
+    .article__container {
+        flex-direction: column;
+        width: 90%;
+        overflow: hidden;
+    }
+    .article__img {
+        height: 200px;
+        border-radius: 8px 8px 0px 0px;
+    }
+    .article__content {
+        padding-bottom: 16px;
+    }
+    .article__title {
+        width: 100%;
+    }
+    .article__info {
+        margin-top: 5%;
+    }
+    .article__user__avt {
+        width: 15%;
+    }
+    .article__socials--web {
+        display: none;
+    }
+    .article__share__btn i:hover,
+    .article__share__btn i:active {
+        background-color: var(--DesaturatedDarkBlue);
+        color: white;
+        transition: .3s;
+    }
+}
+
+@media (max-width:1023px) and (min-width:740px) {
+    .article__container {
+        width: 70%;
+    }
+    .article__img {
+        height: 400px;
+    }
+}
